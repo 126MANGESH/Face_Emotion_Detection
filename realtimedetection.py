@@ -3,14 +3,14 @@ import numpy as np
 from tensorflow.keras.models import load_model # type: ignore
 
 # Load model
-model = load_model("E:/Python/Flask_Project/Face_Emotion_setection/facialemotionmodel.h5")
+model = load_model("/workspaces/Face_Emotion_Detection/face_model.h5")
 
 # Haar cascade file for face detection
 haar_file = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
 face_cascade = cv2.CascadeClassifier(haar_file)
 
 # Emotion labels
-labels = {0: 'angry', 1: 'disgust', 2: 'fear', 3: 'happy', 4: 'neutral', 5: 'sad', 6: 'surprise'}
+labels = {0: 'angry', 1: 'disgust', 2: 'fear', 3: 'happy', 4: 'neutral', 5: 'sad',6:'suprise'}
 
 # Function to preprocess input image
 def extract_features(image):
